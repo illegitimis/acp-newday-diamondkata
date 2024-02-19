@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="../common.targets" />
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="System" />
+        <Using Include="CommandLine" />
+        <Using Include="Acp.NewDay.DiamondKata" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Acp.NewDay.DiamondKata\Acp.NewDay.DiamondKata.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -86,6 +86,7 @@ dotnet_diagnostic.IDE0058.severity = none
 
 # CA1859: Use concrete types when possible for improved performance
 dotnet_diagnostic.CA1859.severity = none
+csharp_space_around_binary_operators = before_and_after
 
 [*.{cs,vb}]
 #### Naming styles ####

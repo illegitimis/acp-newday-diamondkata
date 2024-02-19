@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Acp.NewDay.DiamondKata.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "C"
+    }
+  }
+}

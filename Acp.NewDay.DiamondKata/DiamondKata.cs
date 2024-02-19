@@ -5,15 +5,8 @@ namespace Acp.NewDay.DiamondKata;
 /// <summary>
 /// <inheritdoc cref="IDiamondKata"/>
 /// </summary>
-public class DiamondKata : IDiamondKata
+public class DiamondKata(ILineBuilder lineBuilder) : IDiamondKata
 {
-    private readonly ILineBuilder _lineBuilder;
-
-    public DiamondKata(ILineBuilder lineBuilder)
-    {
-        _lineBuilder = lineBuilder;
-    }
-
     public string Print(char letter)
     {
         if (!char.IsLetter(letter)) throw new ArgumentOutOfRangeException(nameof(letter), letter, LineBuilder.LettersOnly);
@@ -30,7 +23,7 @@ public class DiamondKata : IDiamondKata
         var stack = new Stack<char[]>();
         for (char c = start; c <= letter; c++)
         {
-            var chars = _lineBuilder.Build(c, lineLength, left, right);
+            var chars = lineBuilder.Build(c, lineLength, left, right);
             Append(chars);
             stack.Push(chars);
             right++;
@@ -39,7 +32,7 @@ public class DiamondKata : IDiamondKata
 
         stack.Pop();
 
-        while (stack.Any()) Append(stack.Pop());
+        while (stack.Count != 0) Append(stack.Pop());
 
         return sb.ToString();
 

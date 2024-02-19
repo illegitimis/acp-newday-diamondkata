@@ -39,7 +39,7 @@ public class LineBuilderTests
     public void DigitsAndPunctuationNotLetters(char c)
     {
         var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Sut.Build(c, 0, 0, 0));
-        Assert.Contains(LineBuilder.LettersOnly, ex.Message);
+        Assert.Contains(LineBuilder.LettersOnly, ex.Message, StringComparison.InvariantCultureIgnoreCase);
     }
 
     [Fact]

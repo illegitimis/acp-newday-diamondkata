@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace Acp.NewDay.DiamondKata.UnitTests
 {
@@ -32,6 +33,38 @@ namespace Acp.NewDay.DiamondKata.UnitTests
             var chars = Sut.Build(letter,length,left,right);
             var actual = chars.ToString();
             Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData('1')]
+        [InlineData('9')]
+        [InlineData('=')]
+        [InlineData('+')]
+        public void DigitsAndPunctuationNotLetters(char c)
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Sut.Build(c, 0, 0, 0));
+            Assert.Contains(LineBuilder.LettersOnly, ex.Message);
+        }
+
+        [Fact]
+        public void LeftHigherThanRightNotSupported()
+        {
+            var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 100, 10, 0));
+            Assert.Equal("Left 10 should be less than or equal to right 0", ex.Message);
+        }
+
+        [Fact]
+        public void LeftHigherThanLengthNotSupported()
+        {
+            var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 0, 10, 13));
+            Assert.Equal("Left 10 should be less than or equal to length 0", ex.Message);
+        }
+
+        [Fact]
+        public void RightHigherThanLengthNotSupported()
+        {
+            var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 17, 10, 85));
+            Assert.Equal("Right 85 should be less than or equal to length 17", ex.Message);
         }
     }
 }

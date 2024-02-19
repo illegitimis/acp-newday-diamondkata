@@ -10,4 +10,8 @@
     <InternalsVisibleTo Include="Acp.NewDay.DiamondKata.UnitTests"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="System" />
+  </ItemGroup>
+
 </Project>

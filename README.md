@@ -19,3 +19,15 @@ Screenshots below.
 > no command line parameters errors caught
 
 ![missing.required.option.png](./pics/missing.required.option.png) 
+
+> specify whitespace characters
+
+```sh
+./Acp.NewDay.DiamondKata.CLI.exe K -w -
+./Acp.NewDay.DiamondKata.CLI.exe K --whitespace -
+```
+
+![diamond.F.spaces.png](./pics/diamond.F.spaces.png)
+
+![diamond.K.dashes.png](./pics/diamond.K.dashes.png)
+

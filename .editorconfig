@@ -51,7 +51,12 @@ dotnet_style_qualification_for_method = false
 # Namespace declaration preferences (IDE0160 and IDE0161)
 csharp_style_namespace_declarations = file_scoped
 
+# 'using' directive placement (IDE0065)
+csharp_using_directive_placement = outside_namespace
+
 #### Diagnostic configuration ####
+
+dotnet_analyzer_diagnostic.severity = warning
 
 # CA1000: Do not declare static members on generic types
 dotnet_diagnostic.CA1000.severity = warning

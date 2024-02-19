@@ -12,7 +12,12 @@
             if (left > length) throw new NotSupportedException(NotSupported(nameof(left), left, nameof(length), length));
             if (right > length) throw new NotSupportedException(NotSupported(nameof(right), right, nameof(length), length));
 
-            throw new NotImplementedException();
+            char[] result = new char[length];
+            for(int i = 0; i < length; i++)
+                result[i] = '_';
+            result[left-1] = letter;
+            result[right-1] = letter;
+            return result;
         }
 
         internal const string LettersOnly = "Only letters accepted";

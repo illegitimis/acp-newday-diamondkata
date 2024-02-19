@@ -21,17 +21,17 @@ namespace Acp.NewDay.DiamondKata.UnitTests
         const string B524 = "_B_B_";
         const string C515 = "C___C";
 
-        [Theory(Skip = "TDD, implementation throws not implemented exception")]
+        [Theory]
         [InlineData('A', 1, 1, 1, A111)]
-        [InlineData('A', 1, 1, 1, A322)]
+        [InlineData('A', 3, 2, 2, A322)]
         [InlineData('A', 5, 3, 3, A533)]
         [InlineData('B', 3, 1, 3, B313)]
         [InlineData('B', 5, 2, 4, B524)]
         [InlineData('C', 5, 1, 5, C515)]
-        public void Produce(char letter, int length, int left, int right, string expected)
+        public void ShouldProduceLineCharacters(char letter, int length, int left, int right, string expected)
         {
-            var chars = Sut.Build(letter,length,left,right);
-            var actual = chars.ToString();
+            var chars = Sut.Build(letter, length, left, right);
+            var actual = new string(chars);
             Assert.Equal(expected, actual);
         }
 

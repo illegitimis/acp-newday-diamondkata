@@ -1,10 +1,12 @@
-using System;
-using System.Collections.Generic;
-using Xunit;
-using static Acp.NewDay.DiamondKata.UnitTests.LineBuilderTests;
 
 namespace Acp.NewDay.DiamondKata.UnitTests
 {
+    using System;
+    using System.Collections.Generic;
+    using Xunit;
+    using static Acp.NewDay.DiamondKata.UnitTests.LineBuilderTests;
+    using static Acp.NewDay.DiamondKata.LineBuilder;
+
     public class DiamondKataTests
     {
         static readonly IDiamondKata Sut = new DiamondKata(LineBuilderTests.Sut);
@@ -39,10 +41,10 @@ namespace Acp.NewDay.DiamondKata.UnitTests
         [InlineData('8')]
         [InlineData('.')]
         [InlineData('>')]
-        public void LettersOnly(char c)
+        public void OnlyLettersSupported(char c)
         {
             var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Sut.Print(c));
-            Assert.Contains(LineBuilder.LettersOnly, ex.Message);
+            Assert.Contains(LettersOnly, ex.Message);
         }
 
         [Theory]

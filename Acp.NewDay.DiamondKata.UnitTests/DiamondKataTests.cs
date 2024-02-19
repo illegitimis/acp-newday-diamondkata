@@ -1,10 +1,11 @@
+using System;
 using Xunit;
 
 namespace Acp.NewDay.DiamondKata.UnitTests
 {
     public class DiamondKataTests
     {
-        static readonly IDiamondKata Sut = new DiamondKata();
+        static readonly IDiamondKata Sut = new DiamondKata(LineBuilderTests.Sut);
 
         const string A = "A";
 
@@ -21,6 +22,17 @@ namespace Acp.NewDay.DiamondKata.UnitTests
             _B_B_
             __A__
         ";
+
+        [Theory]
+        [InlineData('7')]
+        [InlineData('8')]
+        [InlineData('.')]
+        [InlineData('>')]
+        public void LettersOnly(char c)
+        {
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Sut.Print(c));
+            Assert.Contains(LineBuilder.LettersOnly, ex.Message);
+        }
 
         [Fact]
         public void A1()

@@ -5,7 +5,7 @@ namespace Acp.NewDay.DiamondKata.UnitTests
 {
     public class LineBuilderTests
     {
-        static readonly ILineBuilder Sut = new LineBuilder();
+        internal static readonly ILineBuilder Sut = new LineBuilder();
 
         /*
          * Const naming: 3 indices

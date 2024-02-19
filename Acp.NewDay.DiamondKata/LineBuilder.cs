@@ -5,7 +5,7 @@
 /// </summary>
 public class LineBuilder : ILineBuilder
 {
-    public char[] Build(char letter, uint length, uint left, uint right)
+    public char[] Build(char letter, uint length, uint left, uint right, char? whitespace = null)
     {
         if (!char.IsLetter(letter)) throw new ArgumentOutOfRangeException(nameof(letter), letter, LettersOnly);
         if (left > right) throw new NotSupportedException(NotSupported(nameof(left), left, nameof(right), right));
@@ -14,7 +14,7 @@ public class LineBuilder : ILineBuilder
 
         char[] result = new char[length];
         for (int i = 0; i < length; i++)
-            result[i] = '_';
+            result[i] = whitespace ?? ' ';
         result[left - 1] = letter;
         result[right - 1] = letter;
         return result;

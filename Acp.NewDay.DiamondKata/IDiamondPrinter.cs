@@ -14,5 +14,5 @@ public interface IDiamondPrinter
     /// <returns>
     /// Diamond kata string
     /// </returns>
-    string Print(char letter);
+    string Print(char letter, char? whitespace = null);
 }

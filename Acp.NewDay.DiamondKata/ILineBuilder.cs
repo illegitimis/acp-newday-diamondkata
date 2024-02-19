@@ -13,5 +13,5 @@ public interface ILineBuilder
     /// <param name="left">leftmost position where letter stands</param>
     /// <param name="right">leftmost position where letter stands</param>
     /// <returns>character array for a line</returns>
-    char[] Build(char letter, uint length, uint left, uint right);
+    char[] Build(char letter, uint length, uint left, uint right, char? whitespace = null);
 }

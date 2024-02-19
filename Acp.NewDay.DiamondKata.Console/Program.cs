@@ -10,7 +10,7 @@ internal static class Program
             .WithParsed(options =>
             {
                 var printer = new DiamondPrinter(new LineBuilder());
-                var diamond = printer.Print(options.Letter);
+                var diamond = printer.Print(options.Letter, options.WhiteSpaceChar);
                 Console.WriteLine(diamond);
             })
             .WithNotParsed(errors =>

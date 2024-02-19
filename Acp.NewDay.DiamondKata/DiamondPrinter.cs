@@ -7,7 +7,7 @@ namespace Acp.NewDay.DiamondKata;
 /// </summary>
 public class DiamondPrinter(ILineBuilder lineBuilder) : IDiamondPrinter
 {
-    public string Print(char letter)
+    public string Print(char letter, char? whitespace = null)
     {
         if (!char.IsLetter(letter)) throw new ArgumentOutOfRangeException(nameof(letter), letter, LineBuilder.LettersOnly);
 
@@ -23,7 +23,7 @@ public class DiamondPrinter(ILineBuilder lineBuilder) : IDiamondPrinter
         var stack = new Stack<char[]>();
         for (char c = start; c <= letter; c++)
         {
-            var chars = lineBuilder.Build(c, lineLength, left, right);
+            var chars = lineBuilder.Build(c, lineLength, left, right, whitespace);
             Append(chars);
             stack.Push(chars);
             right++;

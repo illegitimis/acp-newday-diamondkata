@@ -3,9 +3,9 @@
 namespace Acp.NewDay.DiamondKata;
 
 /// <summary>
-/// <inheritdoc cref="IDiamondKata"/>
+/// <inheritdoc cref="IDiamondPrinter"/>
 /// </summary>
-public class DiamondKata(ILineBuilder lineBuilder) : IDiamondKata
+public class DiamondPrinter(ILineBuilder lineBuilder) : IDiamondPrinter
 {
     public string Print(char letter)
     {

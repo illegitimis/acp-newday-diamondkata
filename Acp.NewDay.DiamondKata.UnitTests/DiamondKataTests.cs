@@ -4,7 +4,7 @@ using static Acp.NewDay.DiamondKata.UnitTests.LineBuilderTests;
 namespace Acp.NewDay.DiamondKata.UnitTests;
 public class DiamondKataTests
 {
-    private static readonly IDiamondKata Sut = new DiamondKata(LineBuilderTests.Sut);
+    private static readonly IDiamondPrinter Sut = new DiamondPrinter(LineBuilderTests.Sut);
     private static readonly string rn = Environment.NewLine;
     private static readonly string A = $"{A111}{rn}";
 

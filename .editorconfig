@@ -154,3 +154,7 @@ dotnet_style_prefer_simplified_interpolation = true:suggestion
 
 # IDE0048: Add parentheses for clarity
 dotnet_diagnostic.IDE0048.severity = none
+
+# CA1812: Avoid uninstantiated internal classes
+dotnet_diagnostic.CA1812.severity = none
+

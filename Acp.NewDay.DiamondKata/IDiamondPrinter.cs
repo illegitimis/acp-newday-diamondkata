@@ -3,7 +3,7 @@
 /// <summary>
 /// Contract for NewDay DiamondKata recruitment test
 /// </summary>
-public interface IDiamondKata
+public interface IDiamondPrinter
 {
     /// <summary>
     /// Composes a diamond like string as specified in <see cref="https://github.com/NewDayTechnology/RecruitmentTests/blob/main/DiamondKata/README.md"/>

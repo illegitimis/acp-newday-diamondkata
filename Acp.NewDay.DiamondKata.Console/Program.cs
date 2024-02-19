@@ -9,7 +9,7 @@ internal static class Program
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(options =>
             {
-                var printer = new DiamondKata(new LineBuilder());
+                var printer = new DiamondPrinter(new LineBuilder());
                 var diamond = printer.Print(options.Letter);
                 Console.WriteLine(diamond);
             })

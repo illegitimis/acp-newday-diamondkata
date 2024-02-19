@@ -1,9 +1,7 @@
 ﻿
-// using Console = global::System.Console;
-
 namespace Acp.NewDay.DiamondKata.CLI;
 
-internal class Options
+internal sealed class Options
 {
     [Value(0, Required = true, HelpText = "Diamond character to iterate to")]
     public char Letter { get; set; }

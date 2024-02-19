@@ -13,6 +13,6 @@
         /// <param name="left">leftmost position where letter stands</param>
         /// <param name="right">leftmost position where letter stands</param>
         /// <returns>character array for a line</returns>
-        char[] Build(char letter, int length, int left, int right);
+        char[] Build(char letter, uint length, uint left, uint right);
     }
 }

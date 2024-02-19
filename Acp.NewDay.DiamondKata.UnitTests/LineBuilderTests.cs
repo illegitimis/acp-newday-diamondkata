@@ -28,7 +28,7 @@ namespace Acp.NewDay.DiamondKata.UnitTests
         [InlineData('B', 3, 1, 3, B313)]
         [InlineData('B', 5, 2, 4, B524)]
         [InlineData('C', 5, 1, 5, C515)]
-        public void ShouldProduceLineCharacters(char letter, int length, int left, int right, string expected)
+        public void ShouldProduceLineCharacters(char letter, uint length, uint left, uint right, string expected)
         {
             var chars = Sut.Build(letter, length, left, right);
             var actual = new string(chars);

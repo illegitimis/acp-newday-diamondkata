@@ -5,7 +5,7 @@
     /// </summary>
     public class LineBuilder : ILineBuilder
     {
-        public char[] Build(char letter, int length, int left, int right)
+        public char[] Build(char letter, uint length, uint left, uint right)
         {
             if (!char.IsLetter(letter)) throw new ArgumentOutOfRangeException(nameof(letter), letter, LettersOnly);
             if (left > right) throw new NotSupportedException(NotSupported(nameof(left), left, nameof(right), right));
@@ -24,9 +24,9 @@
 
         internal static string NotSupported(
             string notSupportedString,
-            int notSupported,
+            uint notSupported,
             string referenceString,
-            int reference) =>
+            uint reference) =>
             $"{notSupportedString} {notSupported} should be less than or equal to {referenceString} {reference}";
     }
 }

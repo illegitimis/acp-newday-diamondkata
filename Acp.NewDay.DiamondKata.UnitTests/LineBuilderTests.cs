@@ -50,21 +50,24 @@ namespace Acp.NewDay.DiamondKata.UnitTests
         public void LeftHigherThanRightNotSupported()
         {
             var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 100, 10, 0));
-            Assert.Equal("Left 10 should be less than or equal to right 0", ex.Message);
+            var s = LineBuilder.NotSupported("left", 10, "right", 0);
+            Assert.Equal(s, ex.Message);
         }
 
         [Fact]
         public void LeftHigherThanLengthNotSupported()
         {
             var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 0, 10, 13));
-            Assert.Equal("Left 10 should be less than or equal to length 0", ex.Message);
+            var s = LineBuilder.NotSupported("left", 10, "length", 0);
+            Assert.Equal(s, ex.Message);
         }
 
         [Fact]
         public void RightHigherThanLengthNotSupported()
         {
             var ex = Assert.Throws<NotSupportedException>(() => Sut.Build('c', 17, 10, 85));
-            Assert.Equal("Right 85 should be less than or equal to length 17", ex.Message);
+            var s = LineBuilder.NotSupported("right", 85, "length", 17);
+            Assert.Equal(s, ex.Message);
         }
     }
 }

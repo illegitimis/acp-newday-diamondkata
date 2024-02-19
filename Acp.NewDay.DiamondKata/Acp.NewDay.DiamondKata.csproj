@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="../../common.targets"/>
+  <Import Project="../common.targets"/>
 
   <ItemGroup>
     <InternalsVisibleTo Include="Acp.NewDay.DiamondKata.UnitTests"/>

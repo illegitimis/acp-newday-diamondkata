@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="../common.targets"/>
+  <Import Project="../common.targets" />
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Acp.NewDay.DiamondKata\Acp.NewDay.DiamondKata\Acp.NewDay.DiamondKata.csproj" />
+    <ProjectReference Include="..\Acp.NewDay.DiamondKata\Acp.NewDay.DiamondKata.csproj" />
   </ItemGroup>
 
 </Project>

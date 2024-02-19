@@ -7,7 +7,11 @@
     {
         public string Print(char letter)
         {
-            throw new NotImplementedException();
+            return letter switch
+            {
+                'A' or 'a' => "A",
+                _ => throw new NotImplementedException()
+            };
         }
     }
 }

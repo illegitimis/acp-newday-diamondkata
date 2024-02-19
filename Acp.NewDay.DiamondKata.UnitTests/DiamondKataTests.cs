@@ -22,7 +22,7 @@ namespace Acp.NewDay.DiamondKata.UnitTests
             __A__
         ";
 
-        [Fact(Skip = "TDD, implementation throws not implemented exception")]
+        [Fact]
         public void A1()
         {
             var expected = Sut.Print('A');

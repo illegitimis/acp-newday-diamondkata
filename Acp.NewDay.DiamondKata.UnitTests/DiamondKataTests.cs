@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
+using static Acp.NewDay.DiamondKata.UnitTests.LineBuilderTests;
 
 namespace Acp.NewDay.DiamondKata.UnitTests
 {
@@ -7,21 +9,30 @@ namespace Acp.NewDay.DiamondKata.UnitTests
     {
         static readonly IDiamondKata Sut = new DiamondKata(LineBuilderTests.Sut);
 
-        const string A = "A";
+        static readonly string rn = Environment.NewLine;
 
-        const string B = @"
-            _A_
-            B_B
-            _A_
-        ";
+        static readonly string A = $"{A111}{rn}";
+        /*
+         A
+        B B
+         A
+         */
+        static readonly string B = $"{A322}{rn}{B313}{rn}{A322}{rn}";
+        /*
+        _ _ A _ _
+        _ B _ B _
+        C _ _ _ C
+        _ B _ B _
+        _ _ A _ _
+          */
+        static readonly string C = $"{A533}{rn}{B524}{rn}{C515}{rn}{B524}{rn}{A533}{rn}";
 
-        const string C = @"
-            __A__
-            _B_B_
-            C___C
-            _B_B_
-            __A__
-        ";
+        public static IEnumerable<object[]> PositiveTests => new List<object[]>
+        {
+            new object[] { 'A', A },
+            new object[] { 'B', B },
+            new object[] { 'C', C }
+        };
 
         [Theory]
         [InlineData('7')]
@@ -34,25 +45,12 @@ namespace Acp.NewDay.DiamondKata.UnitTests
             Assert.Contains(LineBuilder.LettersOnly, ex.Message);
         }
 
-        [Fact]
-        public void A1()
+        [Theory]
+        [MemberData(nameof(PositiveTests))]
+        public void ShouldPrintDiamond(char letter, string expected)
         {
-            var expected = Sut.Print('A');
-            Assert.Equal(expected, A);
-        }
-
-        [Fact(Skip = "TDD, implementation throws not implemented exception")]
-        public void B2()
-        {
-            var expected = Sut.Print('B');
-            Assert.Equal(expected, B);
-        }
-
-        [Fact(Skip = "TDD, implementation throws not implemented exception")]
-        public void C3()
-        {
-            var expected = Sut.Print('C');
-            Assert.Equal(expected, C);
+            var actual = Sut.Print(letter);
+            Assert.Equal(expected, actual);
         }
     }
 }

@@ -14,12 +14,12 @@ namespace Acp.NewDay.DiamondKata.UnitTests
          * Third: right most letter
          */
 
-        const string A111 = "A";
-        const string A322 = "_A_";
-        const string A533 = "__A__";
-        const string B313 = "B_B";
-        const string B524 = "_B_B_";
-        const string C515 = "C___C";
+        internal const string A111 = "A";
+        internal const string A322 = "_A_";
+        internal const string A533 = "__A__";
+        internal const string B313 = "B_B";
+        internal const string B524 = "_B_B_";
+        internal const string C515 = "C___C";
 
         [Theory]
         [InlineData('A', 1, 1, 1, A111)]
